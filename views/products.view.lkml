@@ -40,7 +40,6 @@ view: products {
     type: string
     sql: ${TABLE}."MATNR" ;;
     label: "Código de producto"
-    primary_key: yes
   }
 
   dimension: stufe {
