@@ -50,6 +50,8 @@ view: products {
   dimension: zzlinea_pr {
     type: string
     sql: ${TABLE}."ZZLINEA_PR" ;;
+    label: "Línea y Marca de producto
+"
   }
 
   dimension: zzlinea_pr_descr {
