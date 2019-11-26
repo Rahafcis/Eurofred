@@ -15,10 +15,6 @@ view: sales_detail {
 
   }
 
-  dimension: familia_sales {
-    type: string
-    sql: ${products.familia} ;;
-  }
   dimension_group: erdat {
     type: time
     timeframes: [
