@@ -90,6 +90,12 @@ view: sales_detail {
     label: "Importe"
   }
 
+  measure: Total_Venta {
+    type: sum
+    sql:${wogbtr} ;;
+    value_format_name: eur_0
+  }
+
   dimension: ww118 {
     type: string
     sql: ${TABLE}."WW118" ;;
