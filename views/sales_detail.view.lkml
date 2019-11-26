@@ -90,6 +90,7 @@ view: sales_detail {
     type: number
     sql: ${TABLE}."WOGBTR" ;;
     label: "Importe"
+    hidden: yes
   }
 
   measure: Total_Venta {
