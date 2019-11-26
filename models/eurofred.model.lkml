@@ -13,7 +13,7 @@ persist_with: eurofred_default_datagroup
 explore: sales_detail {
   join: products {
     type:left_outer
-    relationship: one_to_one
+    relationship: many_to_many
     sql_on: ${sales_detail.matnr}=${products.matnr} ;;
 
   }
