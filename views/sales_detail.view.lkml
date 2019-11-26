@@ -26,6 +26,7 @@ view: sales_detail {
     convert_tz: no
     datatype: date
     sql: ${TABLE}."ERDAT" ;;
+    label: "Fecha"
   }
 
   dimension: fkber {
