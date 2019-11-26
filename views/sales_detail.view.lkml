@@ -4,11 +4,13 @@ view: sales_detail {
   dimension: belnr {
     type: string
     sql: ${TABLE}."BELNR" ;;
+    label: "Documento"
   }
 
   dimension: bukrs {
     type: string
     sql: ${TABLE}."BUKRS" ;;
+    label: "Empresa"
   }
 
   dimension_group: erdat {
@@ -24,6 +26,7 @@ view: sales_detail {
     convert_tz: no
     datatype: date
     sql: ${TABLE}."ERDAT" ;;
+    label: "Fecha"
   }
 
   dimension: fkber {
