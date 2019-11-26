@@ -12,4 +12,10 @@ persist_with: eurofred_default_datagroup
 
 explore: sales_detail {}
 
-explore: products {}
+explore: products {
+  join: sales_detail {
+    type: left_outer
+    relationship: one_to_one
+    sql_on: ${products.matnr}=${sales_detail.matnr} ;;
+  }
+}
