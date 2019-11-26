@@ -4,13 +4,15 @@ view: sales_detail {
   dimension: belnr {
     type: string
     sql: ${TABLE}."BELNR" ;;
-    label: "Documento"
+    label: "Código de Documento"
   }
 
   dimension: bukrs {
     type: string
     sql: ${TABLE}."BUKRS" ;;
-    label: "Empresa"
+    label: "Código de Empresa"
+    drill_fields: [vkbur]
+
   }
 
   dimension_group: erdat {
@@ -51,7 +53,7 @@ view: sales_detail {
   dimension: matnr {
     type: string
     sql: ${TABLE}."MATNR" ;;
-    label: "Producto"
+    label: "Código de Producto"
   }
 
   dimension: perio {
@@ -63,25 +65,25 @@ view: sales_detail {
   dimension: vkbur {
     type: string
     sql: ${TABLE}."VKBUR" ;;
-    label: "Delegacion"
+    label: "Código de Delegacion"
   }
 
   dimension: vkgrp {
     type: string
     sql: ${TABLE}."VKGRP" ;;
-    label: "Ventas"
+    label: "Código de Ventas"
   }
 
   dimension: vkorg {
     type: string
     sql: ${TABLE}."VKORG" ;;
-    label: "Organización"
+    label: "Código de Organización"
   }
 
   dimension: werks {
     type: string
     sql: ${TABLE}."WERKS" ;;
-    label: "Almacén"
+    label: "Código de Almacén"
   }
 
   dimension: wogbtr {
@@ -99,7 +101,7 @@ view: sales_detail {
   dimension: ww118 {
     type: string
     sql: ${TABLE}."WW118" ;;
-    label: "Vendedor"
+    label: "Código de Vendedor"
   }
 
   dimension: zzlinea_pr {
@@ -112,4 +114,6 @@ view: sales_detail {
     type: count
     drill_fields: []
   }
+  set: user_details {
+    fields: [vkorg]}
 }
