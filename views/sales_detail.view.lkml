@@ -44,6 +44,8 @@ view: sales_detail {
   dimension: kndnr {
     type: string
     sql: ${TABLE}."KNDNR" ;;
+    label:"Codigo de cliente"
+
   }
 
   dimension: matnr {
