@@ -14,7 +14,7 @@ explore: sales_detail {}
 
 explore: products {
   join: sales_detail {
-    type: left_outer
+    type: full_outer
     relationship: one_to_one
     sql_on: ${products.matnr}=${sales_detail.matnr} ;;
   }
