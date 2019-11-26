@@ -14,7 +14,6 @@ view: sales_detail {
     drill_fields: [vkbur]
 
   }
-
   dimension_group: erdat {
     type: time
     timeframes: [
