@@ -14,6 +14,11 @@ view: sales_detail {
     drill_fields: [vkbur]
 
   }
+
+  dimension: familia_sales {
+    type: string
+    sql: ${products.familia} ;;
+  }
   dimension_group: erdat {
     type: time
     timeframes: [
