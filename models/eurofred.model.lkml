@@ -13,6 +13,6 @@ persist_with: eurofred_default_datagroup
 explore: sales_detail {
   join: products {
     relationship: one_to_one
-    sql_on: ${products.matnr} LIKE CONCAT('%', ${sales_detail.matnr} ,'%');;
+    sql_on: ${products.matnr} LIKE CONCAT( ${sales_detail.matnr} ,'%');;
   }
 }
