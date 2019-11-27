@@ -15,6 +15,7 @@ view: sales_detail {
 
   }
 
+
   dimension_group: erdat {
     type: time
     timeframes: [
