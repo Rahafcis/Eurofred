@@ -6,6 +6,11 @@ view: weather {
     sql: ${TABLE}."DIR" ;;
   }
 
+  measure: Ola_Calor{
+    type: yesno
+    sql: ${sales_detail.Total_Venta} > 35,000,000 ;;
+  }
+
   dimension_group: fecha {
     type: time
     timeframes: [
