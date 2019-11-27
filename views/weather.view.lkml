@@ -8,7 +8,7 @@ view: weather {
 
   measure: Ola_Calor{
     type: yesno
-    sql: ${sales_detail.Total_Venta} > 35,000,000 ;;
+    sql:${ola_calor}  ;;
   }
 
   dimension_group: fecha {
