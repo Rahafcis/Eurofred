@@ -75,18 +75,20 @@ view: weather {
     sql: ${TABLE}."RACHA" ;;
   }
 
-  dimension: tmax {
-    type: number
+  measure: tmax {
+    type: average
     sql: ${TABLE}."TMAX" ;;
   }
 
-  dimension: tmed {
-    type: number
+
+
+  measure: tmed {
+    type: average
     sql: ${TABLE}."TMED" ;;
   }
 
-  dimension: tmin {
-    type: number
+  measure: tmin {
+    type: average
     sql: ${TABLE}."TMIN" ;;
   }
 
