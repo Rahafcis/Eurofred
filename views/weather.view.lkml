@@ -6,11 +6,6 @@ view: weather {
     sql: ${TABLE}."DIR" ;;
   }
 
-  measure: Ola_Calor{
-    type: yesno
-    sql:${ola_calor}  ;;
-  }
-
   dimension_group: fecha {
     type: time
     timeframes: [
