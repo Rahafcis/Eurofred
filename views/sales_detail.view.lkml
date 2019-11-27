@@ -98,6 +98,7 @@ view: sales_detail {
     type: sum
     sql:${wogbtr} ;;
     value_format_name: eur_0
+    label: "Total Net Sales"
   }
 
   dimension: ww118 {
