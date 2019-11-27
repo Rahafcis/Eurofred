@@ -63,6 +63,7 @@ view: weather {
   dimension: ola_calor {
     type: yesno
     sql: ${TABLE}."OLA_CALOR" ;;
+    hidden: yes
   }
 
   dimension: prec {
