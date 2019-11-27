@@ -18,6 +18,7 @@ explore: sales_detail {
 }
 explore: weather {
   join: sales_detail {
+    type: inner
     relationship: one_to_one
     sql_on: ${sales_detail.erdat_date}=${weather.fecha_date} ;;
   }
