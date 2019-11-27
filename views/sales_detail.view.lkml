@@ -94,7 +94,7 @@ view: sales_detail {
     hidden: yes
   }
 
-  measure: Total_Venta {
+  measure: Total_Net_Sales{
     type: sum
     sql:${wogbtr} ;;
     value_format_name: eur_0
