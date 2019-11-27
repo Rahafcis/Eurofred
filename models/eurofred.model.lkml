@@ -16,3 +16,4 @@ explore: sales_detail {
     sql_on: ${products.matnr} = ${sales_detail.matnr};;
   }
 }
+explore: weather {}
