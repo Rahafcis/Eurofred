@@ -16,9 +16,4 @@ explore: sales_detail {
     sql_on: ${products.matnr} = ${sales_detail.matnr};;
   }
 }
-explore: weather {
-  join: sales_detail {
-    relationship: one_to_one
-    sql_on: ${sales_detail.erdat_date}=${weather.fecha_date} ;;
-  }
-}
+explore: weather {}
