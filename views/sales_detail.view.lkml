@@ -1,20 +1,16 @@
 view: sales_detail {
   sql_table_name: PUBLIC.SALES_DETAIL ;;
 
-  dimension: belnr {
-    type: string
-    sql: ${TABLE}."BELNR" ;;
-    label: "Código de Documento"
-  }
-
   dimension: bukrs {
     type: string
     sql: ${TABLE}."BUKRS" ;;
-    label: "Código de Empresa"
-    drill_fields: [vkbur]
-
   }
 
+  dimension: country {
+    type: string
+    map_layer_name: countries
+    sql: ${TABLE}."COUNTRY" ;;
+  }
 
   dimension_group: erdat {
     type: time
@@ -29,95 +25,90 @@ view: sales_detail {
     convert_tz: no
     datatype: date
     sql: ${TABLE}."ERDAT" ;;
-    label: "Fecha"
   }
 
   dimension: fkber {
     type: string
     sql: ${TABLE}."FKBER" ;;
-    label: "Concepto"
   }
 
   dimension: gjahr {
     type: number
     sql: ${TABLE}."GJAHR" ;;
-    label: "Ejercicio"
   }
 
   dimension: kndnr {
     type: string
     sql: ${TABLE}."KNDNR" ;;
-    label:"Codigo de cliente"
+  }
 
+  dimension: land1 {
+    type: string
+    sql: ${TABLE}."LAND1" ;;
   }
 
   dimension: matnr {
     type: string
     sql: ${TABLE}."MATNR" ;;
-    label: "Código de Producto"
-    primary_key: yes
   }
 
   dimension: perio {
     type: number
     sql: ${TABLE}."PERIO" ;;
-    label: "Periodo"
+  }
+
+  dimension: rbeln {
+    type: string
+    sql: ${TABLE}."RBELN" ;;
+  }
+
+  dimension: regio {
+    type: string
+    sql: ${TABLE}."REGIO" ;;
+  }
+
+  dimension: region {
+    type: string
+    sql: ${TABLE}."REGION" ;;
   }
 
   dimension: vkbur {
     type: string
     sql: ${TABLE}."VKBUR" ;;
-    label: "Código de Delegacion"
   }
 
   dimension: vkgrp {
     type: string
     sql: ${TABLE}."VKGRP" ;;
-    label: "Código de Ventas"
   }
 
   dimension: vkorg {
     type: string
     sql: ${TABLE}."VKORG" ;;
-    label: "Código de Organización"
   }
 
   dimension: werks {
     type: string
     sql: ${TABLE}."WERKS" ;;
-    label: "Código de Almacén"
   }
 
   dimension: wogbtr {
     type: number
     sql: ${TABLE}."WOGBTR" ;;
-    label: "Importe"
-    hidden: yes
-  }
-
-  measure: Total_Venta{
-    type: sum
-    sql:${wogbtr} ;;
-    value_format_name: eur_0
-    label: "Total Net Sales"
   }
 
   dimension: ww118 {
     type: string
     sql: ${TABLE}."WW118" ;;
-    label: "Código de Vendedor"
   }
 
   dimension: zzlinea_pr {
     type: string
     sql: ${TABLE}."ZZLINEA_PR" ;;
-    label: "Línea y Marca de producto"
   }
 
   measure: count {
     type: count
     drill_fields: []
   }
-  set: user_details {
-    fields: [vkorg]}
 }
