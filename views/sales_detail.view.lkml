@@ -97,6 +97,10 @@ view: sales_detail {
     sql: ${TABLE}."WOGBTR" ;;
   }
 
+measure:Total_Venta {
+type:sum
+sql:${wogbtr}  ;;
+}
   dimension: ww118 {
     type: string
     sql: ${TABLE}."WW118" ;;
