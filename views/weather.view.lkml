@@ -81,7 +81,6 @@ view: weather {
   }
 
 
-
   measure: tmed {
     type: average
     sql: ${TABLE}."TMED" ;;
