@@ -100,7 +100,7 @@ view: sales_detail {
 measure:Total_Venta {
 type:sum
 sql:${wogbtr}  ;;
-label: "Net Total Sales"
+label: "Total Net Sales"
 }
   dimension: ww118 {
     type: string
