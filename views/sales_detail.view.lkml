@@ -56,7 +56,7 @@ view: sales_detail {
   dimension: matnr {
     type: string
     sql: ${TABLE}."MATNR" ;;
-    group_label: "Código de producto"
+    label: "Código de producto"
   }
 
   dimension: perio {
