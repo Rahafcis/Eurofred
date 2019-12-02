@@ -15,6 +15,11 @@ explore: sales_detail {
     relationship: one_to_one
     sql_on: ${products.matnr} = ${sales_detail.matnr};;
   }
+
+join: country {
+  relationship: one_to_one
+  sql_on: ${country.province}=${sales_detail.region};;
+}
   }
   explore: weather {
     join: sales_detail {
