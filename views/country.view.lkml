@@ -18,7 +18,6 @@ view: country {
     type: string
     sql: ${TABLE}."PROVINCE" ;;
     label: "province Num"
-    primary_key: yes
   }
 
   dimension: province_description {
