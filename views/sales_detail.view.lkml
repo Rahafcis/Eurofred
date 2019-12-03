@@ -131,7 +131,7 @@ measure:Total_Sales_Barcelona  {
 
 measure: percetage_Of_Total {
   type: number
-  sql: ${sales_detail.Total_Sales_Barcelona}/sum(${wogbtr}) ;;
+  sql: ${sales_detail.Total_Sales_Barcelona}/${Total_Venta} ;;
   value_format_name: percent_0
 }
 
