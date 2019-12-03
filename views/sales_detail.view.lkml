@@ -116,6 +116,7 @@ measure:Total_Venta {
 type:sum
 sql:${wogbtr}  ;;
 label: "Total Net Sales"
+value_format: "0.0,,\" M\""
 }
 
 measure:Total_Sales_Barcelona  {
