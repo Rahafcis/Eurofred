@@ -129,6 +129,11 @@ measure:Total_Sales_Barcelona  {
   }
 }
 
+measure: percetage_Of_Total {
+  type: number
+  sql: ${sales_detail.Total_Sales_Barcelona}/sum(${wogbtr}) ;;
+}
+
   dimension: ww118 {
     type: string
     sql: ${TABLE}."WW118" ;;
