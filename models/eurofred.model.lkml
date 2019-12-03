@@ -27,7 +27,7 @@ join: country {
       sql_on: ${sales_detail.erdat_date}=${weather.fecha_date} ;;
     }
     join: country {
-      relationship: one_to_one
+      relationship: many_to_many
       sql_on: ${country.province_description}=${weather.provincia} ;;
     }
   }
