@@ -32,5 +32,4 @@ join: country {
       relationship: one_to_one
       sql_on: ${country.province}=${sales_detail.region} ;;
     }
-
   }
