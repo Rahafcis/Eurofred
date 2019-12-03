@@ -122,6 +122,7 @@ value_format: "0.0,,\" M\" \" €\""
 measure:Total_Sales_Barcelona  {
   type: sum
   sql:${wogbtr}  ;;
+  value_format: "0.0,,\" M\" \" €\""
   filters: {
     field: country.province_description
     value: "BARCELONA"
