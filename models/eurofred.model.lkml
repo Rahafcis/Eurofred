@@ -24,7 +24,7 @@ join: country {
   explore: weather {
     join: sales_detail {
       relationship: one_to_one
-      sql_on: ${sales_detail.erdat_year}=${weather.fecha_year} ;;
+      sql_on: ${country.province_description}=${sales_detail.region} ;;
     }
     join: country {
       relationship: one_to_one
