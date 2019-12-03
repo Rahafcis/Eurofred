@@ -24,10 +24,10 @@ join: country {
   explore: weather {
     join: sales_detail {
       relationship: one_to_one
-      sql_on: ${weather.fecha_raw}=${sales_detail.erdat_raw} ;;
+      sql_on: ${weather.fecha_date}=${sales_detail.erdat_date} ;;
     }
     join: country {
-      relationship: one_to_one
+      relationship: many_to_one
       sql_on: ${country.province_description}=${weather.provincia} ;;
     }
   }
