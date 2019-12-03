@@ -23,7 +23,7 @@ join: country {
   }
   explore: weather {
     join: sales_detail {
-      relationship: one_to_one
+      relationship: many_to_one
       sql_on: ${sales_detail.erdat_date}=${weather.fecha_date} ;;
     }
     join: country {
