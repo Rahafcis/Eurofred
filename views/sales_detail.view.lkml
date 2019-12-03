@@ -118,6 +118,15 @@ sql:${wogbtr}  ;;
 label: "Total Net Sales"
 }
 
+measure:Total_Sales_Barcelona  {
+  type: sum
+  sql:${wogbtr}  ;;
+  filters: {
+    field: country.province_description
+    value: "BARCELONA"
+  }
+}
+
   dimension: ww118 {
     type: string
     sql: ${TABLE}."WW118" ;;
