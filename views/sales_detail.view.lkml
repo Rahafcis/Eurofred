@@ -133,6 +133,7 @@ measure:Total_Sales_Barcelona  {
     type: string
     sql: ${TABLE}."WW118" ;;
     label: "Código de vendedor"
+
   }
 
   dimension: zzlinea_pr {

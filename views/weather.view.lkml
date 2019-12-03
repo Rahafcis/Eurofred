@@ -68,6 +68,7 @@ view: weather {
   dimension: provincia {
     type: string
     sql: ${TABLE}."PROVINCIA" ;;
+    primary_key: yes
   }
 
   dimension: racha {
