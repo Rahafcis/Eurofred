@@ -121,7 +121,7 @@ value_format: "0.0,,\" M\" \" €\""
 
 measure:Total_Sales_Barcelona  {
   type: sum
-  sql:distinct (${wogbtr})  ;;
+  sql:(${wogbtr})  ;;
   value_format: "0.0,,\" M\" \" €\""
   filters: {
     field: country.province_description
@@ -131,7 +131,7 @@ measure:Total_Sales_Barcelona  {
 
 measure: percetage_Of_Total {
   type: number
-  sql:${sales_detail.Total_Sales_Barcelona}/sum_distinct(${wogbtr}) ;;
+  sql:${sales_detail.Total_Sales_Barcelona}/sum(${wogbtr}) ;;
   value_format_name: percent_0
 }
 
