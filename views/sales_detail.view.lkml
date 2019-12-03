@@ -116,6 +116,13 @@ type:sum
 sql:${wogbtr}  ;;
 label: "Total Net Sales"
 }
+  measure: percentage_Total_Venta {
+    type: number
+    value_format_name: percent_0
+    sql: 1.0 * ${wogbtr}/sum(nullif(${wogbtr},0)) ;;
+  }
+
+
   dimension: ww118 {
     type: string
     sql: ${TABLE}."WW118" ;;
