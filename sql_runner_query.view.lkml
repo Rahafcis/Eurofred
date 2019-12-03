@@ -26,6 +26,7 @@ view: sql_runner_query {
   dimension: sales_detail_total_sales_barcelona {
     type: number
     sql: ${TABLE}."sales_detail.total_sales_barcelona" ;;
+    value_format_name: percent_0
   }
 
   set: detail {
