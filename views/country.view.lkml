@@ -5,7 +5,7 @@ view: country {
     type: string
     map_layer_name: countries
     sql: ${TABLE}."COUNTRY" ;;
-    label: "Country Nom"
+    label: "Country Code"
   }
 
   dimension: country_description {
