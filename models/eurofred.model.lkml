@@ -32,9 +32,4 @@ sql_on: ${country.province}=${sales_detail.region} and ${country.country}=(${sal
       relationship: one_to_one
       sql_on: ${country.province}=${sales_detail.region} ;;
     }
-
-    join: products {
-      relationship: one_to_one
-      sql_on: sql_on: ${products.matnr} = ${sales_detail.matnr} ;;
-    }
   }
