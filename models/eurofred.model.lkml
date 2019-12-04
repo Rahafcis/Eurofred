@@ -37,4 +37,10 @@ join: weather {
       relationship: one_to_one
       sql_on: ${country.province}=${sales_detail.region} ;;
     }
+
+    join: products {
+      relationship: many_to_one
+      sql_on:${products.matnr} = ${sales_detail.matnr}  ;;
+
+    }
   }
