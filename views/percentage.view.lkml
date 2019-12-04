@@ -18,17 +18,19 @@ view: percentage {
     dimension: total_net_sales {
       type: number
       sql: ${TABLE}."TOTAL_NET_SALES" ;;
+      value_format: "0.0,,\" M\" \" €\""
     }
 
     dimension: barcelona_net_sales {
       type: number
       sql: ${TABLE}."BARCELONA_NET_SALES" ;;
+      value_format: "0.0,,\" M\" \" €\""
     }
 
     dimension: sales_detail_total_sales_barcelona {
       type: number
       sql: ${TABLE}."sales_detail.total_sales_barcelona" ;;
-      value_format_name: percent_0
+      value_format_name: percent_1
     }
 
     set: detail {
