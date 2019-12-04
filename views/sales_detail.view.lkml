@@ -119,6 +119,11 @@ label: "Total Net Sales"
 value_format: "0.0,,\" M\" \" €\""
 }
 
+measure:Total {
+  type: sum
+  sql: ${wogbtr}  ;;
+}
+
 measure:Total_Sales_Barcelona  {
   type: sum
   sql:(${wogbtr})  ;;
