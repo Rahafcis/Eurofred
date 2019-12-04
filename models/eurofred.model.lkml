@@ -46,3 +46,4 @@ join: weather {
     }
   }
 
+  explore: percentage {}
