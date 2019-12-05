@@ -20,14 +20,8 @@ explore: sales_detail {
 join: country {
   relationship: one_to_one
 sql_on: ${country.province}=${sales_detail.region} and ${country.country}=(${sales_detail.country});;
-
 }
 
-join: weather {
-  relationship: one_to_one
-  sql_on: sql_on: ${country.province}=${sales_detail.region} ;;
-
-}
 
   }
   explore: weather {
