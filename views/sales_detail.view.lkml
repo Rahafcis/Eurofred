@@ -133,6 +133,7 @@ measure:Total_Sales_Barcelona  {
     field: country.province_description
     value: "BARCELONA"
   }
+
 }
 
 measure: percetage_From_Total {
