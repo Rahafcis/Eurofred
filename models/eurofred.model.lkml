@@ -34,6 +34,6 @@ sql_on: ${country.province}=${sales_detail.region} and ${country.country}=(${sal
     join: country {
       relationship: one_to_one
       type: inner
-      sql_on: ${country.province}=${sales_detail.region} ;;
+      sql_on: ${country.province}=${weather.provincia} ;;
     }
 }
