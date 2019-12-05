@@ -25,7 +25,7 @@ sql_on: ${country.province}=${sales_detail.region} and ${country.country}=(${sal
 
 join: weather {
   relationship: one_to_one
-  sql_on: sql_on: ${weather.fecha_date}=${sales_detail.erdat_date} ;;
+  sql_on: sql_on: ${country.province}=${sales_detail.region} ;;
 
 }
 
@@ -34,11 +34,11 @@ join: weather {
     join: sales_detail {
       type: inner
       relationship: one_to_one
-      sql_on: sql_on: ${weather.fecha_date}=${sales_detail.erdat_date} ;;
+      sql_on: sql_on: ${country.province}=${sales_detail.region} ;;
     }
 
     join: country {
-      relationship: many_to_one
+      relationship: one_to_one
       type: inner
       sql_on: ${country.province}=${sales_detail.region} ;;
     }
