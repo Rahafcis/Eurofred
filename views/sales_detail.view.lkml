@@ -127,6 +127,7 @@ measure:Total {
 measure:Total_Sales_Barcelona  {
   type: sum
   sql:(${wogbtr})  ;;
+  label: "Barcelona Total Net Sales"
   value_format: "0.0,,\" M\" \" €\""
   filters: {
     field: country.province_description
