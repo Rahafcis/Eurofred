@@ -18,6 +18,7 @@ explore: sales_detail {
   }
 
 join: country {
+  type: inner
   relationship: one_to_one
 sql_on: ${country.province}=${sales_detail.region} and ${country.country}=(${sales_detail.country});;
 }
