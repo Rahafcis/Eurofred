@@ -31,8 +31,8 @@ view: features {
     sql: ${TABLE}."FIN_DE_SEMANA" ;;
   }
 
-  dimension: ipc {
-    type: number
+  measure: ipc {
+    type: average
     sql: ${TABLE}."IPC" ;;
   }
 
@@ -41,8 +41,8 @@ view: features {
     sql: ${TABLE}."OLA_CALOR" ;;
   }
 
-  dimension: pobl_activa {
-    type: number
+  measure: pobl_activa {
+    type: average
     sql: ${TABLE}."POBL_ACTIVA" ;;
   }
 
