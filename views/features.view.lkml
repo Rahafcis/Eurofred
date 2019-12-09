@@ -6,6 +6,22 @@ view: features {
     sql: ${TABLE}."DIA_DE_SEMANA" ;;
   }
 
+  dimension: Day {
+    type: string
+    sql:
+    case
+    when ${dia_de_semana}=1 then 'Sunday'
+    when ${dia_de_semana}=2 then 'Monday'
+    when ${dia_de_semana}=3 then 'Tuesday'
+    when ${dia_de_semana}=4 then 'Wednesday'
+    when ${dia_de_semana}=5 then 'Thursday'
+    when ${dia_de_semana}=6 then 'Friday'
+    when ${dia_de_semana}=7 then 'Saturday'
+    Else 'Others'
+    End
+    ;;
+  }
+
   dimension: dia_festivo {
     type: yesno
     sql: ${TABLE}."DIA_FESTIVO" ;;
