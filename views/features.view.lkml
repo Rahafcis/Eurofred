@@ -52,17 +52,17 @@ view: features {
   }
 
   measure: tmax {
-    type: number
+    type: average
     sql: ${TABLE}."TMAX" ;;
   }
 
   measure: tmed {
-    type: number
+    type: average
     sql: ${TABLE}."TMED" ;;
   }
 
   measure: tmin {
-    type: number
+    type: average
     sql: ${TABLE}."TMIN" ;;
   }
 
