@@ -23,19 +23,19 @@ join: country {
 sql_on: ${country.province}=${sales_detail.region} and ${country.country}=(${sales_detail.country});;
 }
 
-join: weather {
+join: features {
   type: inner
   relationship: one_to_one
-  sql_on: ${weather.fecha_date}=${sales_detail.erdat_date} ;;
+  sql_on: ${features.fecha_date}}=${sales_detail.erdat_date} ;;
 }
 
 
   }
-  explore: weather {
+  explore: features {
     join: sales_detail {
       type: inner
       relationship: one_to_one
-      sql_on: ${weather.fecha_date}=${sales_detail.erdat_date} ;;
+      sql_on: ${features.fecha_date}=${sales_detail.erdat_date} ;;
     }
 
     join: country {
