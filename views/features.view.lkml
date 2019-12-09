@@ -51,17 +51,17 @@ view: features {
     sql: ${TABLE}."PROVINCIA" ;;
   }
 
-  dimension: tmax {
+  measure: tmax {
     type: number
     sql: ${TABLE}."TMAX" ;;
   }
 
-  dimension: tmed {
+  measure: tmed {
     type: number
     sql: ${TABLE}."TMED" ;;
   }
 
-  dimension: tmin {
+  measure: tmin {
     type: number
     sql: ${TABLE}."TMIN" ;;
   }
