@@ -44,6 +44,7 @@ view: features {
   measure: pobl_activa {
     type: average
     sql: ${TABLE}."POBL_ACTIVA" ;;
+    label: "Población Activa"
   }
 
   dimension: provincia {
