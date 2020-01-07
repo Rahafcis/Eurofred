@@ -19,7 +19,6 @@ explore: sales_detail {
   }
 
   join: sales_p {
-    type: cross
     relationship: one_to_one
     sql_on: ${sales_detail.erdat_year}=${sales_p.date_year} ;;
 
