@@ -45,5 +45,10 @@ join: features {
     }
 
 }
-explore: sales_product {}
- explore: sales_p {}
+ explore: sales_p {
+   join: sales_d {
+     type: inner
+    relationship: one_to_one
+    sql_on: ${sales_d.erdat_date}=${sales_p.fecha} ;;
+   }
+ }
