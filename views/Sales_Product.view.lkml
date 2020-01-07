@@ -11,7 +11,7 @@ view: sales_product {
                 FROM SALES_DETAIL
                 where region='08' and fkber = 'VENTA'
               )
-              SELECT F.FECHA, nvl(S.MATNR,'No disponible') as Product , nvl(S.WOGBTR,0)  WOGBTR
+              SELECT F.FECHA, nvl(S.MATNR,'No disponible'), nvl(S.WOGBTR,0)  WOGBTR
               FROM FEATURES_T AS F
               left JOIN SALES_T AS S
               on F.FECHA = S.ERDAT
@@ -31,7 +31,8 @@ view: sales_product {
 
     dimension: nvls_matnrno_disponible {
       type: string
-      sql: ${TABLE}."Product" ;;
+      label: "Product"
+      sql: ${TABLE}."nvls_matnrno_disponible" ;;
     }
 
     dimension: wogbtr {
