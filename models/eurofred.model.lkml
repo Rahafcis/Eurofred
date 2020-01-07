@@ -15,6 +15,14 @@ explore: sales_detail {
   join: products {
     relationship: one_to_one
     sql_on: ${products.matnr} = ${sales_detail.matnr};;
+
+  }
+
+  join: sales_p {
+    type: cross
+    relationship: one_to_one
+    sql_on: ${sales_detail.erdat_date}=${sales_p.fecha} ;;
+
   }
 
 join: country {
