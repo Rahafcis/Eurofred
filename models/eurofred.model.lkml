@@ -20,7 +20,7 @@ explore: sales_detail {
 
   join: sales_p {
     relationship: one_to_one
-    sql_on: ${sales_detail.erdat_year}=${sales_p.date_year} ;;
+    sql_on: ${sales_detail.erdat_date}=${sales_p.fecha} ;;
 
   }
 
