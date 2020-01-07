@@ -15,7 +15,7 @@ view: sales_p {
               S.MATNR
       FROM     FEATURES_T AS F
               CROSS JOIN SALES_T AS S
-      ORDER BY F.FECHA
+      ORDER BY F.FECHA desc
  limit 20,000
        ;;
   }
