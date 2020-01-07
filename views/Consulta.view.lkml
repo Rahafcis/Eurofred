@@ -1,6 +1,6 @@
 
 
-  view: cross{
+  view: consulta{
     derived_table: {
       sql: WITH
               FEATURES_T (FECHA)
@@ -18,7 +18,7 @@
               FROM     FEATURES_T AS F
                       CROSS JOIN SALES_T AS S
               ORDER BY F.FECHA
-              limit 100;
+              limit 100
                ;;
     }
 
