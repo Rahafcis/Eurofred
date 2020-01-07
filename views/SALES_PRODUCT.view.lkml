@@ -30,16 +30,19 @@ view: sales_product {
   dimension: fecha {
     type: date
     sql: ${TABLE}."FECHA" ;;
+    label: "Date"
   }
 
   dimension: matnr {
     type: string
     sql: ${TABLE}."MATNR" ;;
+    label: "Product"
   }
 
   dimension: wogbtr {
     type: number
     sql: ${TABLE}."WOGBTR" ;;
+    label: "Sales"
   }
 
   set: detail {
