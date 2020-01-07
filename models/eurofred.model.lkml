@@ -46,6 +46,3 @@ join: features {
     }
 
 }
- explore: sales_p {
-
- }

@@ -1,53 +1,48 @@
 view: sales_product {
-  derived_table: {
-    sql: WITH
-      FEATURES_T (FECHA)
-      AS  (SELECT DISTINCT FECHA
-          FROM   FEATURES),
+    derived_table: {
+      sql: WITH
+              FEATURES_T (FECHA) AS (
+                  SELECT DISTINCT FECHA
+                  FROM   FEATURES
+              ),
 
-      SALES_T (MATNR, WOGBTR)
-      AS (SELECT DISTINCT MATNR, SUM(WOGBTR)WOGBTR
-         FROM   SALES_DETAIL
-         where region='08' and fkber = 'VENTA'
-          GROUP BY MATNR
-        )
+              SALES_T (ERDAT, MATNR, WOGBTR) AS (
+                SELECT DISTINCT ERDAT, MATNR, WOGBTR
+                FROM SALES_DETAIL
+                where region='08' and fkber = 'VENTA'
+              )
+              SELECT F.FECHA, nvl(S.MATNR,'No disponible') , nvl(S.WOGBTR,0)  WOGBTR
+              FROM FEATURES_T AS F
+              left JOIN SALES_T AS S
+              on F.FECHA = S.ERDAT
+              ORDER BY F.FECHA asc;
+               ;;
+    }
 
-      SELECT   F.FECHA,
-              S.MATNR,
-              S.WOGBTR
-      FROM     FEATURES_T AS F
-              CROSS JOIN SALES_T AS S
-      ORDER BY F.FECHA
-      limit 100
-       ;;
-  }
+    measure: count {
+      type: count
+      drill_fields: [detail*]
+    }
 
-  measure: count {
-    type: count
-    drill_fields: [detail*]
-  }
+    dimension: fecha {
+      type: date
+      sql: ${TABLE}."FECHA" ;;
+    }
 
-  dimension: fecha {
-    type: date
-    sql: ${TABLE}."FECHA" ;;
-    label: "Date"
-  }
+    dimension: nvls_matnrno_disponible {
+      type: string
+      label: "NVL(S.MATNR,'NO DISPONIBLE')"
+      sql: ${TABLE}."NVL(S.MATNR,'NO DISPONIBLE')" ;;
+    }
 
-  dimension: matnr {
-    type: string
-    sql: ${TABLE}."MATNR" ;;
-    label: "Product"
-  }
+    dimension: wogbtr {
+      type: number
+      sql: ${TABLE}."WOGBTR" ;;
+    }
 
-  dimension: wogbtr {
-    type: number
-    sql: ${TABLE}."WOGBTR" ;;
-    label: "Sales"
-  }
-
-  set: detail {
-    fields: [fecha, matnr, wogbtr]
-  }
+    set: detail {
+      fields: [fecha, nvls_matnrno_disponible, wogbtr]
+    }
 
   # # You can specify the table name if it's different from the view name:
   # sql_table_name: my_schema_name.tester ;;
