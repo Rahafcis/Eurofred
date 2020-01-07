@@ -43,4 +43,5 @@ join: features {
       type: inner
       sql_on: ${country.province}=${sales_detail.region} ;;
     }
+
 }
