@@ -16,7 +16,6 @@ view: sales_p {
       FROM     FEATURES_T AS F
               CROSS JOIN SALES_T AS S
       ORDER BY F.FECHA
-      limit 1000
        ;;
   }
 
