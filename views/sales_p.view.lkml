@@ -30,6 +30,22 @@ view: sales_p {
     sql: ${TABLE}."FECHA" ;;
   }
 
+  dimension_group: date {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    convert_tz: no
+    datatype: date
+    sql: ${fecha};;
+    label: "Date"
+  }
+
   dimension: matnr {
     type: string
     sql: ${TABLE}."MATNR" ;;
