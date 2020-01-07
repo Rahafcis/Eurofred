@@ -46,3 +46,4 @@ join: features {
 
 }
 explore: sales_product {}
+ explore: sales_p {}
