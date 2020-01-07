@@ -1,6 +1,6 @@
 
 
-  view: sql_runner_query {
+  view: cross{
     derived_table: {
       sql: WITH
               FEATURES_T (FECHA)
