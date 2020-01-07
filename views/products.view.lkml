@@ -39,8 +39,11 @@ view: products {
   dimension: matnr {
     type: string
     sql: ${TABLE}."MATNR" ;;
-    label: "Código de producto"
-    primary_key: yes
+  }
+
+  dimension: matnr_1 {
+    type: string
+    sql: ${TABLE}."MATNR_1" ;;
   }
 
   dimension: stufe {
@@ -51,8 +54,6 @@ view: products {
   dimension: zzlinea_pr {
     type: string
     sql: ${TABLE}."ZZLINEA_PR" ;;
-    label: "Línea y Marca de producto
-"
   }
 
   dimension: zzlinea_pr_descr {
