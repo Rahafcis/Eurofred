@@ -45,3 +45,4 @@ join: features {
     }
 
 }
+explore: sales_product {}
