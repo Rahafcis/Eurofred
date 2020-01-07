@@ -45,5 +45,3 @@ join: features {
     }
 
 }
-
-explore: consulta {}
