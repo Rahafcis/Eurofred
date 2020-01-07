@@ -18,12 +18,6 @@ explore: sales_detail {
 
   }
 
-  join: sales_p {
-    relationship: one_to_one
-    sql_on: ${sales_detail.erdat_date}=${sales_p.fecha} ;;
-
-  }
-
 join: country {
   type: inner
   relationship: one_to_one
