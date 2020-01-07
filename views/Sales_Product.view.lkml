@@ -11,11 +11,11 @@ view: sales_product {
                 FROM SALES_DETAIL
                 where region='08' and fkber = 'VENTA'
               )
-              SELECT F.FECHA, nvl(S.MATNR,'No disponible') , nvl(S.WOGBTR,0)  WOGBTR
+              SELECT F.FECHA, nvl(S.MATNR,'No disponible') as Product , nvl(S.WOGBTR,0)  as Sales
               FROM FEATURES_T AS F
               left JOIN SALES_T AS S
               on F.FECHA = S.ERDAT
-              ORDER BY F.FECHA asc;
+              ORDER BY F.FECHA asc
                ;;
     }
 
