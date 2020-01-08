@@ -24,7 +24,7 @@ view: full_sales {
   dimension: zzlinea_pr {
     type: string
     sql: ${TABLE}."ZZLINEA_PR" ;;
-    label: "PRODUCT_LINE"
+    label: "Product Line"
   }
 
   measure: count {
