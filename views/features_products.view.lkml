@@ -1,5 +1,5 @@
-view: features_product {
-  sql_table_name: PUBLIC.FEATURES_PRODUCT ;;
+view: features_products {
+  sql_table_name: PUBLIC.FEATURES_PRODUCTS ;;
 
   dimension: dia_de_semana {
     type: number
@@ -49,6 +49,11 @@ view: features_product {
   dimension: tmed {
     type: number
     sql: ${TABLE}."TMED" ;;
+  }
+
+  dimension: zzlinea_pr {
+    type: string
+    sql: ${TABLE}."ZZLINEA_PR" ;;
   }
 
   measure: count {
