@@ -47,6 +47,5 @@ join: features {
 
 }
 
-explore: full_sales {}
 
 explore: features_products {}
