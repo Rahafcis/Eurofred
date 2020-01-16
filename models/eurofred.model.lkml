@@ -29,8 +29,6 @@ join: features {
   relationship: one_to_one
   sql_on: ${features.fecha_date}=${sales_detail.erdat_date} ;;
 }
-
-
   }
   explore: features {
     join: sales_detail {
