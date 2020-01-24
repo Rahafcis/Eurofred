@@ -39,6 +39,7 @@ view: products {
   dimension: matnr {
     type: string
     sql: ${TABLE}."MATNR" ;;
+    primary_key: yes
   }
 
   dimension: matnr_1 {
@@ -54,7 +55,6 @@ view: products {
   dimension: zzlinea_pr {
     type: string
     sql: ${TABLE}."ZZLINEA_PR" ;;
-    primary_key: yes
   }
 
   dimension: zzlinea_pr_descr {
