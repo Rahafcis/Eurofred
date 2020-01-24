@@ -54,6 +54,7 @@ view: products {
   dimension: zzlinea_pr {
     type: string
     sql: ${TABLE}."ZZLINEA_PR" ;;
+    primary_key: yes
   }
 
   dimension: zzlinea_pr_descr {

@@ -11,10 +11,13 @@ datagroup: eurofred_default_datagroup {
 
 persist_with: eurofred_default_datagroup
 
+explore: products {}
+
 explore: sales_detail {
   join: products {
-    relationship: many_to_many
-    sql_on: ${products.matnr} = ${sales_detail.matnr};;
+    relationship: many_to_one
+    type: left_outer
+    sql_on: ${sales_detail.matnr}=${products.matnr};;
 
   }
 
@@ -27,14 +30,14 @@ sql_on: ${country.province}=${sales_detail.region} and ${country.country}=${sale
 join: features {
   type: inner
   relationship: one_to_one
-  sql_on: ${features.fecha_date}=${sales_detail.erdat_date} ;;
+  sql_on: ${features.fecha_date}=${sales_detail.date_date} ;;
 }
   }
   explore: features {
     join: sales_detail {
       type: inner
       relationship: one_to_one
-      sql_on: ${features.fecha_date}=${sales_detail.erdat_date} ;;
+      sql_on: ${features.fecha_date}=${sales_detail.date_date} ;;
     }
 
     join: country {

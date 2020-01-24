@@ -14,7 +14,8 @@ view: sales_detail {
     description: "País de la dirección de envío de la mercancía"
   }
 
-  dimension_group: erdat {
+
+  dimension_group: date {
     type: time
     timeframes: [
       raw,
@@ -27,7 +28,7 @@ view: sales_detail {
     convert_tz: no
     datatype: date
     sql: ${TABLE}."ERDAT" ;;
-    label: "Date"
+
   }
 
   dimension: fkber {
