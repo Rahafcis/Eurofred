@@ -1,25 +1,25 @@
 view: products {
   sql_table_name: PUBLIC.PRODUCTS ;;
 
-  dimension: clas {
-    type: string
-    sql: ${TABLE}."CLAS" ;;
-  }
+  #dimension: clas {
+   # type: string
+    #sql: ${TABLE}."CLAS" ;;
+  #}
 
-  dimension_group: f_baja {
-    type: time
-    timeframes: [
-      raw,
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
-    convert_tz: no
-    datatype: date
-    sql: ${TABLE}."F_BAJA" ;;
-  }
+  #dimension_group: f_baja {
+   # type: time
+    #timeframes: [
+     # raw,
+      #date,
+      #week,
+      #month,
+      #quarter,
+      #year
+    #]
+    #convert_tz: no
+    #datatype: date
+    #sql: ${TABLE}."F_BAJA" ;;
+  #}
 
   dimension: familia {
     type: string
@@ -31,10 +31,10 @@ view: products {
     sql: ${TABLE}."FAMILIA_DESCR" ;;
   }
 
-  dimension: mandt {
-    type: string
-    sql: ${TABLE}."MANDT" ;;
-  }
+  #dimension: mandt {
+   # type: string
+    #sql: ${TABLE}."MANDT" ;;
+  #}
 
   dimension: matnr {
     type: string
@@ -42,15 +42,15 @@ view: products {
     primary_key: yes
   }
 
-  dimension: matnr_1 {
-    type: string
-    sql: ${TABLE}."MATNR_1" ;;
-  }
+  #dimension: matnr_1 {
+  #  type: string
+   # sql: ${TABLE}."MATNR_1" ;;
+  #}
 
-  dimension: stufe {
-    type: string
-    sql: ${TABLE}."STUFE" ;;
-  }
+  #dimension: stufe {
+   # type: string
+    #sql: ${TABLE}."STUFE" ;;
+  #}
 
   dimension: zzlinea_pr {
     type: string
