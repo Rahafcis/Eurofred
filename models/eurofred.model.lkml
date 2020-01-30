@@ -46,6 +46,10 @@ join: features {
       sql_on: ${country.province}=${sales_detail.region} ;;
     }
 
+    #REVISE (Delete from here if not valid)
+
+
+
 }
 
 
