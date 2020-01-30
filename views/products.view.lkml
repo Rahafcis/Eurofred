@@ -66,4 +66,15 @@ view: products {
     type: count
     drill_fields: []
   }
+
+  #Revise these measures
+  measure: count_unique_product {
+    type: count_distinct
+    sql: ${matnr} ;;
+  }
+
+  measure: count_unique_brand {
+    type: count_distinct
+    sql: ${zzlinea_pr} ;;
+  }
 }
