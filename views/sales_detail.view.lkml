@@ -162,12 +162,12 @@ measure: percetage_From_Total {
   }
 
   #Revise these measures
-  measure: count_unique_product {
-    type: count_distinct
-    sql: ${matnr} ;;
-    }
+  #measure: count_unique_product {
+   # type: count_distinct
+    #sql: ${matnr} ;;
+    #}
 
-  measure: count_unique_brand {
+  measure: count_distinct_brand {
     type: count_distinct
     sql: ${zzlinea_pr} ;;
   }

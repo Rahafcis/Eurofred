@@ -15,8 +15,10 @@ explore: products {}
 
 explore: sales_detail {
   join: products {
-    relationship: many_to_one
-    type: left_outer
+    #relationship: many_to_one
+    #type: left_outer
+    relationship: one_to_one
+    type: inner
     sql_on: ${sales_detail.matnr}=${products.matnr};;
 
   }
