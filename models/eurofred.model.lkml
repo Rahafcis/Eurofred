@@ -18,7 +18,7 @@ explore: sales_detail {
     #relationship: many_to_one
     #type: left_outer
     relationship: many_to_one
-    type: inner
+    type: left_outer
     sql_on: ${sales_detail.matnr}=${products.matnr};;
 
   }
