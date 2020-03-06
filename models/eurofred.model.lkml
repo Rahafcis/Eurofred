@@ -22,6 +22,11 @@ explore: sales_detail {
     sql_on: ${sales_detail.matnr}=${products.matnr};;
 
   }
+  join: top_20_product_lines {
+    relationship: many_to_one
+    type: left_outer
+    sql_on: ${sales_detail.zzlinea_pr}=${top_20_product_lines.top_product_line};;
+  }
 
 join: country {
   type: inner

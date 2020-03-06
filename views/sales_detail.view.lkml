@@ -28,7 +28,7 @@ view: sales_detail {
     convert_tz: no
     datatype: date
     sql: ${TABLE}."ERDAT" ;;
-
+  label: "Transaction"
   }
 
   dimension: fkber {
@@ -110,14 +110,14 @@ view: sales_detail {
   dimension: wogbtr {
     type: number
     sql: ${TABLE}."WOGBTR" ;;
-    label: "Importe"
+    label: "Amount"
   }
 
 measure:Total_Venta {
 type:sum
 sql:${wogbtr}  ;;
 label: "Total Net Sales"
-value_format: "0.0,,\" M\" \" €\""
+#value_format: "0.0,,\" M\" \" €\""
 }
 
 measure:Total {
@@ -153,7 +153,7 @@ measure: percetage_From_Total {
   dimension: zzlinea_pr {
     type: string
     sql: ${TABLE}."ZZLINEA_PR" ;;
-    label: "Línea y Marca de producto"
+    label: "Brand & Product Line"
   }
 
   measure: count {
