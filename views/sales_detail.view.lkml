@@ -171,4 +171,9 @@ measure: percetage_From_Total {
     type: count_distinct
     sql: ${zzlinea_pr} ;;
   }
+
+  measure: count_products {
+    type: count_distinct
+    sql: ${matnr} ;;
+  }
 }
