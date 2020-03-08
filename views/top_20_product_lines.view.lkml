@@ -45,8 +45,8 @@ FROM PUBLIC.SALES_DETAIL  AS sales_detail
 GROUP BY 1) as098f6bcd462
 )
 SELECT
-  case when test.rank<=20 then test.zzlinea_pr
-    when test.rank>20 then 'Other' end  AS "test.top_product_lines",
+  case when {% condition choose_rank %} test.rank {% endcondition %} then test.zzlinea_pr
+    else 'Other' end  AS "test.top_product_lines",
   test.Total_Venta AS "test.total_venta_1"
 FROM test
 
@@ -71,9 +71,16 @@ select "test.top_product_lines" as top_product_line, sum("test.total_venta_1") a
   dimension: total_net_sales {
     type: number
     sql: ${TABLE}."TOTAL_NET_SALES" ;;
+    value_format_name: eur_0
   }
 
   set: detail {
     fields: [top_product_line, total_net_sales]
+  }
+
+  filter: choose_rank {
+    type: number
+    default_value: "<=20"
+
   }
 }

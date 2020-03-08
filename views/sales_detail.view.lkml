@@ -34,7 +34,7 @@ view: sales_detail {
   dimension: fkber {
     type: string
     sql: ${TABLE}."FKBER" ;;
-    label: "Código de concepto"
+    label: "Account"
   }
 
   dimension: gjahr {
@@ -117,12 +117,8 @@ measure:Total_Venta {
 type:sum
 sql:${wogbtr}  ;;
 label: "Total Net Sales"
+value_format_name: eur_0
 #value_format: "0.0,,\" M\" \" €\""
-}
-
-measure:Total {
-  type: sum
-  sql: ${wogbtr}  ;;
 }
 
 measure:Total_Sales_Barcelona  {
@@ -175,5 +171,15 @@ measure: percetage_From_Total {
   measure: count_products {
     type: count_distinct
     sql: ${matnr} ;;
+  }
+
+  measure: gross_sales {
+    type: sum
+    sql: ${wogbtr} ;;
+    filters: {
+      field: fkber
+      value: "VENTA"
+    }
+    value_format_name: eur_0
   }
 }
