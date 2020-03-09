@@ -75,6 +75,7 @@ view: features {
   dimension: tmed  {
     type: number
     sql: ${TABLE}."TMED" ;;
+    hidden: yes
   }
 
   measure: pobl_activa {
@@ -112,4 +113,20 @@ view: features {
     type: count
     drill_fields: []
   }
+
+  measure: number_of_heatwaves {
+    type: count
+    filters: {
+      field: ola_calor
+      value: "Yes"
+    }
+  }
+
+  measure: proportion_of_heatwaves_in_year {
+    type: number
+    sql: ${number_of_heatwaves}/${count} ;;
+    label: "Proportion of heatwave days in year"
+  }
+
+
 }

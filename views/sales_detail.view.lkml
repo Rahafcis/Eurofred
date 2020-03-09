@@ -185,4 +185,31 @@ measure: percetage_From_Total {
     }
     value_format_name: eur_0
   }
+
+  measure: sales_during_heatwave {
+    type: sum
+    sql: ${wogbtr} ;;
+    filters: {
+      field: fkber
+      value: "VENTA"
+    }
+    filters: {
+      field: features.ola_calor
+      value: "Yes"
+    }
+    value_format_name: eur_0
+}
+  measure: sales_during_holidays {
+    type: sum
+    sql: ${wogbtr} ;;
+    filters: {
+      field: fkber
+      value: "VENTA"
+    }
+    filters: {
+      field: features.dia_festivo
+      value: "Yes"
+    }
+    value_format_name:  eur_0
+    }
 }
