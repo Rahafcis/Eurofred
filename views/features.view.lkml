@@ -47,6 +47,7 @@ view: features {
     type: date
     sql: ${fecha_date} ;;
     primary_key: yes
+    hidden: yes
   }
 
   dimension: fin_de_semana {
