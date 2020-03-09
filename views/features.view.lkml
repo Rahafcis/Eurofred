@@ -4,6 +4,7 @@ view: features {
   dimension: dia_de_semana {
     type: number
     sql: ${TABLE}."DIA_DE_SEMANA" ;;
+    hidden: no
   }
 
   dimension: Day {
@@ -17,7 +18,6 @@ view: features {
     when ${dia_de_semana}=5 then 'Thursday'
     when ${dia_de_semana}=6 then 'Friday'
     when ${dia_de_semana}=7 then 'Saturday'
-    Else 'Others'
     End
     ;;
   }
@@ -40,11 +40,19 @@ view: features {
     convert_tz: no
     datatype: date
     sql: ${TABLE}."FECHA" ;;
+    label: "Feature"
+  }
+
+  dimension: date {
+    type: date
+    sql: ${fecha_date} ;;
+    primary_key: yes
   }
 
   dimension: fin_de_semana {
     type: yesno
     sql: ${TABLE}."FIN_DE_SEMANA" ;;
+    label: "Weekend"
   }
 
   measure: ipc {
@@ -55,32 +63,48 @@ view: features {
   dimension: ola_calor {
     type: yesno
     sql: ${TABLE}."OLA_CALOR" ;;
+    label: "Was there a heatwave?"
+  }
+
+  dimension: active_population {
+    type: number
+    sql: ${TABLE}."POBL_ACTIVA" ;;
+  }
+
+  dimension: tmed  {
+    type: number
+    sql: ${TABLE}."TMED" ;;
   }
 
   measure: pobl_activa {
     type: average
     sql: ${TABLE}."POBL_ACTIVA" ;;
-    label: "Población Activa"
+    label: "Average active population"
   }
 
   dimension: provincia {
     type: string
     sql: ${TABLE}."PROVINCIA" ;;
+    label: "Province"
   }
 
   measure: tmax {
     type: average
-    sql: ${TABLE}."TMAX" ;;
+    sql: ${tmed} ;;
+    label: "Maximum Temperature"
   }
 
-  measure: tmed {
+  measure: tavg {
     type: average
-    sql: ${TABLE}."TMED" ;;
+    sql: ${tmed} ;;
+    label: "Average Temperature °C"
+    value_format_name: decimal_0
   }
 
   measure: tmin {
     type: average
-    sql: ${TABLE}."TMIN" ;;
+    sql: ${tmed} ;;
+    label: "Minimum Temperature"
   }
 
   measure: count {

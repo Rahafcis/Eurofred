@@ -37,7 +37,7 @@ sql_on: ${country.province}=${sales_detail.region} and ${country.country}=${sale
 join: features {
   type: inner
   relationship: one_to_one
-  sql_on: ${features.fecha_date}=${sales_detail.date_date} ;;
+  sql_on: ${features.date}=${sales_detail.date_date} ;;
 }
   }
   explore: features {
