@@ -116,21 +116,24 @@ view: sales_detail {
 measure:Total_Venta {
 type:sum
 sql:${wogbtr}  ;;
-label: "Total Net Sales"
+label: "Net Sales"
 value_format_name: eur_0
 #value_format: "0.0,,\" M\" \" €\""
 }
 
 measure:Total_Sales_Barcelona  {
   type: sum
-  sql:(${wogbtr})  ;;
-  label: "Barcelona Total Net Sales"
-  value_format: "0.0,,\" M\" \" €\""
+  sql:${wogbtr}  ;;
+  label: "Barcelona Total Gross Sales"
+  value_format_name: eur_0
   filters: {
-    field: country.province_description
-    value: "BARCELONA"
+    field: region
+    value: "08"
   }
-
+  filters: {
+    field: fkber
+    value: "VENTA"
+  }
 }
 
 measure: percetage_From_Total {
