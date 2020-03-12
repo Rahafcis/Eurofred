@@ -39,7 +39,7 @@ view: products {
   dimension: matnr {
     type: string
     sql: ${TABLE}."MATNR" ;;
-    #primary_key: yes
+    primary_key: yes
   }
 
   #dimension: matnr_1 {
