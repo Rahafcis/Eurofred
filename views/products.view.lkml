@@ -59,7 +59,8 @@ view: products {
 
   dimension: zzlinea_pr_descr {
     type: string
-    sql: ${TABLE}."ZZLINEA_PR_DESCR" ;;
+    sql: ${TABLE}."ZZLINEA_PR_MARCA" ;;
+    label: "Brand & Product Description"
   }
 
   measure: count {
