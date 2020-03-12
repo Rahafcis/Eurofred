@@ -23,7 +23,7 @@ view: country {
   dimension: province_description {
     type: string
     sql: ${TABLE}."PROVINCE_DESCRIPTION" ;;
-    label: "province"
+    label: "Province"
   }
 
   measure: count {
