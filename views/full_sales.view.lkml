@@ -1,4 +1,5 @@
 view: full_sales {
+  # it looks like this view cannot have primary key.
   sql_table_name: PUBLIC.FULL_SALES ;;
 
   dimension_group: fecha {
@@ -9,10 +10,10 @@ view: full_sales {
       week,
       month,
       quarter,
+      time,
       year
     ]
     convert_tz: no
-    datatype: date
     sql: ${TABLE}."FECHA" ;;
   }
 
@@ -30,5 +31,10 @@ view: full_sales {
   measure: count {
     type: count
     drill_fields: []
+  }
+
+  measure: sum_sales {
+    type: sum
+    sql: ${sales} ;;
   }
 }

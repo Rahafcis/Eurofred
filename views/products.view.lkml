@@ -40,6 +40,7 @@ view: products {
     type: string
     sql: ${TABLE}."MATNR" ;;
     primary_key: yes
+    description: "Product Identifier"
   }
 
   #dimension: matnr_1 {

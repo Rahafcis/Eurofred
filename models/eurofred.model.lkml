@@ -13,6 +13,7 @@ persist_with: eurofred_default_datagroup
 
 explore: products {}
 
+
 explore: sales_detail {
   join: products {
     #relationship: many_to_one

@@ -4,7 +4,6 @@ view: features {
   dimension: dia_de_semana {
     type: number
     sql: ${TABLE}."DIA_DE_SEMANA" ;;
-    hidden: no
   }
 
   dimension: Day {
