@@ -74,7 +74,6 @@ view: features {
   dimension: tmed  {
     type: number
     sql: ${TABLE}."TMED" ;;
-    hidden: yes
   }
 
   measure: pobl_activa {
@@ -93,19 +92,22 @@ view: features {
     type: average
     sql: ${tmed} ;;
     label: "Maximum Temperature"
+    value_format_name: decimal_1
   }
 
   measure: tavg {
     type: average
     sql: ${tmed} ;;
     label: "Average Temperature °C"
-    value_format_name: decimal_0
+    value_format_name: decimal_1
   }
 
   measure: tmin {
     type: average
     sql: ${tmed} ;;
     label: "Minimum Temperature"
+    value_format_name: decimal_1
+
   }
 
   measure: count {
