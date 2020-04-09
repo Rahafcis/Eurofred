@@ -109,7 +109,7 @@ view: sales_detail {
 
   dimension: wogbtr {
     type: number
-    sql: ${TABLE}."WOGBTR" ;;
+    sql: case when ${TABLE}."WOGBTR" is null then 1 else ${TABLE}."WOGBTR" end ;;
     label: "Amount"
   }
 
