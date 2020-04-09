@@ -33,31 +33,39 @@ join: country {
   type: inner
   relationship: one_to_one
 sql_on: ${country.province}=${sales_detail.region} and ${country.country}=${sales_detail.country};;
-}
+  }
 
 join: features {
   type: inner
   relationship: one_to_one
   sql_on: ${features.date}=${sales_detail.date_date} ;;
-}
   }
-  explore: features {
-    join: sales_detail {
-      type: inner
-      relationship: one_to_one
-      sql_on: ${features.fecha_date}=${sales_detail.date_date} ;;
-    }
 
-    join: country {
-      relationship: one_to_one
-      type: inner
-      sql_on: ${country.province}=${sales_detail.region} ;;
-    }
+join: forecast_arima {
+  relationship: many_to_one
+  sql_on: ${sales_detail.date_week} = ${forecast_arima.date_week} and ${products.familia} = ${forecast_arima.item_id} ;;
+  }
 
-    #REVISE (Delete from here if not valid)
+join: forecast_automl {
+  relationship: many_to_one
+  sql_on: ${sales_detail.date_week} = ${forecast_automl.date_week} and ${products.familia} = ${forecast_automl.item_id} ;;
+  }
+}
 
 
+explore: features {
+  join: sales_detail {
+    type: inner
+    relationship: one_to_one
+    sql_on: ${features.fecha_date}=${sales_detail.date_date} ;;
+  }
 
+  join: country {
+    relationship: one_to_one
+    type: inner
+    sql_on: ${country.province}=${sales_detail.region} ;;
+  }
+  #REVISE (Delete from here if not valid)
 }
 
 
