@@ -14,6 +14,7 @@ persist_with: eurofred_default_datagroup
 
 explore: products {}
 
+explore: predictor {}
 
 explore: sales_detail {
   join: products {
