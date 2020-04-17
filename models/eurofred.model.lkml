@@ -16,6 +16,8 @@ explore: products {}
 
 explore: predictor {}
 
+explore: forecast_full {}
+
 explore: sales_detail {
   join: products {
     #relationship: many_to_one
