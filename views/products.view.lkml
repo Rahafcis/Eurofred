@@ -58,6 +58,11 @@ view: products {
     sql: ${TABLE}."ZZLINEA_PR" ;;
   }
 
+  dimension: familia_zzlinea_pr {
+    type: string
+    sql: concat(${familia},'_',${zzlinea_pr}) ;;
+  }
+
   dimension: zzlinea_pr_descr {
     type: string
     sql: ${TABLE}."ZZLINEA_PR_MARCA" ;;
