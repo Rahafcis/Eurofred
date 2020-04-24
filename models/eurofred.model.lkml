@@ -54,6 +54,11 @@ join: forecast_automl {
   relationship: many_to_one
   sql_on: ${sales_detail.date_week} = ${forecast_automl.date_week} and ${products.familia} = ${forecast_automl.item_id} ;;
   }
+join: monthly_forecast {
+  relationship: many_to_one
+  type: left_outer
+  sql_on: ${sales_detail.date_month} = ${monthly_forecast.date_month} and ${products.familia} = ${monthly_forecast.family} ;;
+}
 }
 
 
@@ -82,4 +87,13 @@ explore: forecast_automl_2013_2018 {
     relationship: one_to_many
     sql_on: ${forecast_automl_2013_2018.item_id} = ${sales_detail.matnr} and ${forecast_automl_2013_2018.date_week} = ${sales_detail.date_week} ;;
   }
+}
+
+explore: monthly_forecast {
+  join: sales_detail_agg {
+    relationship: one_to_many
+    type: left_outer
+    sql_on: ${sales_detail_agg.month} = ${monthly_forecast.date_month} and ${sales_detail_agg.family} = ${monthly_forecast.family} ;;
+  }
+
 }
