@@ -26,18 +26,17 @@ view: sales_detail_agg {
     dimension: gross_sales {
       type: number
       sql: ${TABLE}."sales_detail.gross_sales" ;;
+      value_format_name: eur_0
     }
 
     measure: count {
       type: count
-      drill_fields: [detail*]
+      #drill_fields: [detail*]
     }
   measure: total_gross_sales {
     type: sum
     sql: ${gross_sales} ;;
+    value_format_name: eur_0
   }
 
-    set: detail {
-      fields: []
-    }
-  }
+}
