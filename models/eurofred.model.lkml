@@ -95,5 +95,4 @@ explore: monthly_forecast {
     type: left_outer
     sql_on: ${sales_detail_agg.month} = ${monthly_forecast.date_month} and ${sales_detail_agg.family} = ${monthly_forecast.family} ;;
   }
-
 }
