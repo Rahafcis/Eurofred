@@ -1,5 +1,5 @@
 # include: "eurofred.model.lkml"
-explore: test {}
+#explore: test {}
 view: test {
   derived_table: {
     explore_source: sales_detail {
@@ -32,7 +32,7 @@ view: test {
 
 }
 
-explore: top_20_product_lines {}
+#explore: top_20_product_lines {}
 view: top_20_product_lines {
   derived_table: {
     sql: with a as (WITH test AS (SELECT as098f6bcd462.*,

@@ -19,4 +19,6 @@ include: "/views/ac_adjusted.view.lkml"                # include all views in th
 #   }
 # }
 
-explore: ac_adjusted {}
+explore: ac_adjusted {
+  hidden: yes
+}

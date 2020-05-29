@@ -1,4 +1,4 @@
-explore: brand_dataset {}
+explore: brand_dataset {hidden: yes}
 view: brand_dataset {
   derived_table: {
     sql: -- Getting week, brand, revenue

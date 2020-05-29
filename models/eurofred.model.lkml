@@ -12,11 +12,15 @@ datagroup: eurofred_default_datagroup {
 
 persist_with: eurofred_default_datagroup
 
-explore: products {}
+#explore: products {}
 
-explore: predictor {}
+explore: predictor {
+  hidden: yes
+}
 
-explore: forecast_full {}
+explore: forecast_full {
+  hidden:  yes
+}
 
 explore: sales_detail {
   join: products {
@@ -78,10 +82,8 @@ explore: features {
 }
 
 
-explore: features_products {}
-
-
 explore: forecast_automl_2013_2018 {
+  hidden: yes
   fields: [ALL_FIELDS*,-sales_detail.sales_during_holidays,-sales_detail.sales_during_heatwave]
   join: sales_detail {
     relationship: one_to_many
